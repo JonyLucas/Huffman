@@ -8,6 +8,7 @@ public class Main
     {
         HuffmanDecrement huffmanDecrement = new HuffmanDecrement("C:\\Users\\Joao\\IdeaProjects\\Huffman\\src\\examples\\file.txt");
         huffmanDecrement.run();
+//        huffmanDecrement.showFrequency();
     }
 
 }

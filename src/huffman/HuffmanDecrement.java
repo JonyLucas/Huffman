@@ -37,6 +37,9 @@ public class HuffmanDecrement
     private void frequencyCounter(int value){
         int count = frenquency.get(value) == null ? 1 : frenquency.get(value)+1;
         frenquency.put(value, count);
+    }
+
+    public void showFrequency(){
         System.out.println(frenquency);
     }
 

@@ -28,7 +28,6 @@ public class HuffmanReader
         try {
 
             current = fileInputStream.read();
-            System.out.print(current);
             return current;
 
         } catch (IOException e) {
