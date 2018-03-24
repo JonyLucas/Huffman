@@ -10,15 +10,22 @@ public class TreeController {
 
     static public HuffmanTree buildTree(HashMap<Integer, Integer> symbolFrequency){
 
-
+        createSheets(symbolFrequency);
         return null;
 
     }
 
     static private ArrayList<HuffmanNode> createSheets(HashMap<Integer, Integer> symbolFrequency){
-        for(Integer symbol : symbolFrequency.keySet()){
+        ArrayList<HuffmanNode> sheets = new ArrayList<HuffmanNode>();
 
-//            System.out.println((char) symbol.byteValue());
+        for(Integer symbol : symbolFrequency.keySet()){
+            int frequency = symbolFrequency.get(symbol);
+            String symbolCharacter = String.valueOf((char) symbol.byteValue());
+            sheets.add(new HuffmanNode(symbolCharacter, frequency));
+        }
+
+        for(HuffmanNode hn : sheets){
+            System.out.println("Symbol: " + hn.getSymbols() + " - Frequency: " + hn.getFrequency());
         }
 
         return null;
