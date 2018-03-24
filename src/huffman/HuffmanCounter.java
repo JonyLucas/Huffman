@@ -4,22 +4,16 @@ import infra.HuffmanReader;
 
 import java.util.HashMap;
 
-public class HuffmanDecrement
+public class HuffmanCounter
 {
     private HuffmanReader huffmanReader;
     private HashMap <Integer, Integer> frenquency = new HashMap<Integer,Integer>();
-    public HuffmanDecrement(String filePath)
+    public HuffmanCounter(String filePath)
     {
         huffmanReader = new HuffmanReader(filePath);
     }
 
-    public void run()
-    {
-        getAllFrequencies();
-
-    }
-
-    private void getAllFrequencies()
+    public void readAllFile()
     {
         try{
             int value = huffmanReader.nextByte();
@@ -43,5 +37,7 @@ public class HuffmanDecrement
         System.out.println(frenquency);
     }
 
-
+    public HashMap<Integer, Integer> getFrenquency() {
+        return frenquency;
+    }
 }

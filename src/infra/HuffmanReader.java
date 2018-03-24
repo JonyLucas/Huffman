@@ -31,7 +31,7 @@ public class HuffmanReader
             return current;
 
         } catch (IOException e) {
-            throw new Exception(e.getMessage());
+            throw new Exception("Falha na leitura de arquivo");
         }
 
     }
