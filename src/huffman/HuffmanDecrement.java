@@ -7,7 +7,6 @@ import java.util.HashMap;
 public class HuffmanDecrement
 {
     private HuffmanReader huffmanReader;
-    private int frequencies[];
     private HashMap <Integer, Integer> frenquency = new HashMap<Integer,Integer>();
     public HuffmanDecrement(String filePath)
     {
@@ -16,7 +15,6 @@ public class HuffmanDecrement
 
     public void run()
     {
-        frequencies = new int[256];
         getAllFrequencies();
 
     }
@@ -28,7 +26,6 @@ public class HuffmanDecrement
 
             while (value != -1)
             {
-                frequencies[value]++;
                 frequencyCounter(value);
                 value = huffmanReader.nextByte();
             }
@@ -41,14 +38,6 @@ public class HuffmanDecrement
         int count = frenquency.get(value) == null ? 1 : frenquency.get(value)+1;
         frenquency.put(value, count);
         System.out.println(frenquency);
-    }
-
-    public void showFrequencies()
-    {
-        for(int i = 0; i < 256; i++)
-        {
-            System.out.println("Char: " + i + " Frequencia: " + frequencies[i]);
-        }
     }
 
 
