@@ -19,6 +19,8 @@ public class HuffmanWriter {
         frequencies += "\n";
 
         try {
+            Files.deleteIfExists(Paths.get(filePath));
+            Files.createFile(Paths.get(filePath));
             Files.write(Paths.get(filePath), frequencies.getBytes(), StandardOpenOption.WRITE);
             writeCode(around(finalCode), filePath);
         } catch (IOException e) {
@@ -56,7 +58,7 @@ public class HuffmanWriter {
             {
                 k = 7;
                 b[0] = (byte) aux;
-                System.out.println("Char: " + (char) aux + " value: " + aux);
+                //System.out.println("Char: " + (char) aux + " value: " + aux);
                 Files.write(Paths.get(filePath), b, StandardOpenOption.APPEND);
                 aux = 0;
             }
