@@ -1,5 +1,5 @@
 import controller.TreeBuilder;
-import huffman.HuffmanCounter;
+import controller.HuffmanCounter;
 
 public class Main
 {

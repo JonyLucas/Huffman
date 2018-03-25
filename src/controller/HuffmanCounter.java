@@ -1,4 +1,4 @@
-package huffman;
+package controller;
 
 import infra.HuffmanReader;
 

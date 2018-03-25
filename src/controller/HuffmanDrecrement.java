@@ -1,4 +1,4 @@
-package huffman;
+package controller;
 
 public class HuffmanDrecrement {
 
