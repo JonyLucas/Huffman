@@ -1,5 +1,6 @@
 import controller.HuffmanEncoder;
 import controller.HuffmanCounter;
+import infra.HuffmanWriter;
 
 public class Main
 {
@@ -12,7 +13,8 @@ public class Main
 
         HuffmanEncoder huffmanEncoder = new HuffmanEncoder(path, huffmanCounter.getFrenquency());
         huffmanEncoder.readAndDecrement();
-//        System.out.println(huffmanEncoder.getCode());
+
+        new HuffmanWriter().saveFile("C:\\Users\\Joao\\IdeaProjects\\huffmanEncoder\\src\\examples\\result.txt", huffmanCounter.getFrenquency(), huffmanEncoder.getCode());
     }
 
 }

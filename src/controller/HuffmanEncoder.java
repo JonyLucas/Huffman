@@ -14,7 +14,7 @@ public class HuffmanEncoder {
 
     public HuffmanEncoder(String filePath, HashMap<Integer, Integer> frequency){
         huffmanReader = new HuffmanReader(filePath);
-        currentFrequency = frequency;
+        currentFrequency = new HashMap<Integer, Integer>(frequency);
     }
 
     public void readAndDecrement()
