@@ -1,4 +1,4 @@
-import controller.TreeController;
+import controller.TreeBuilder;
 import huffman.HuffmanCounter;
 
 public class Main
@@ -8,7 +8,7 @@ public class Main
         HuffmanCounter huffmanCounter = new HuffmanCounter("C:\\Users\\Joao\\IdeaProjects\\Huffman\\src\\examples\\file.txt");
         huffmanCounter.readAllFile();
 
-        TreeController.buildTree(huffmanCounter.getFrenquency());
+        TreeBuilder.buildTree(huffmanCounter.getFrenquency());
 //      huffmanDecrement.showFrequency();
     }
 
