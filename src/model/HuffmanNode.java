@@ -4,22 +4,25 @@ import java.util.ArrayList;
 
 public class HuffmanNode implements Comparable<HuffmanNode>{
 
-    private HuffmanNode leftSon, rightSon;
     private int frequencySum = 0;
+    private boolean isSheet;
+    private HuffmanNode leftSon, rightSon;
     private ArrayList<String> symbols = new ArrayList<String>();
 
 
     public HuffmanNode(HuffmanNode rightSon, HuffmanNode leftSon){
         this.leftSon = leftSon;
         this.rightSon = rightSon;
+        isSheet = false;
         frequencySum = leftSon.getFrequency() + rightSon.getFrequency();
-        symbols.addAll(leftSon.getSymbols());
         symbols.addAll(rightSon.getSymbols());
+        symbols.addAll(leftSon.getSymbols());
     }
 
     public HuffmanNode(String symbol, int frequency) {
         symbols.add(symbol);
         frequencySum = frequency;
+        isSheet = true;
     }
 
     public int getFrequency(){ return this.frequencySum; }

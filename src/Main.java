@@ -12,7 +12,7 @@ public class Main
 
         HuffmanEncoder huffmanEncoder = new HuffmanEncoder(path, huffmanCounter.getFrenquency());
         huffmanEncoder.readAndDecrement();
-        System.out.println(huffmanEncoder.getCode());
+//        System.out.println(huffmanEncoder.getCode());
     }
 
 }

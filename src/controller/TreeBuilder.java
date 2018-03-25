@@ -26,16 +26,19 @@ public class TreeBuilder {
             sheets.add(new HuffmanNode(symbolCharacter, frequency));
         }
 
-//        for(HuffmanNode hn : sheets){
-//            System.out.println("Symbol: " + hn.getSymbols() + " - Frequency: " + hn.getFrequency());
-//        }
+        Collections.sort(sheets, Collections.reverseOrder());
+
+        for(HuffmanNode hn : sheets){
+            System.out.println("Symbol: " + hn.getSymbols() + " - Frequency: " + hn.getFrequency());
+        }
+        System.out.println();
 
         return sheets;
     }
 
     static private HuffmanNode createParents(ArrayList<HuffmanNode> huffmanNodes){
         int size = huffmanNodes.size();
-        HuffmanNode parentNode = null;
+        HuffmanNode parentNode = huffmanNodes.get(0);
 
         for(int i = size-1; i > 0; i--){
             HuffmanNode leftSon = huffmanNodes.remove(i);
@@ -45,10 +48,10 @@ public class TreeBuilder {
             huffmanNodes.add(parentNode);
             Collections.sort(huffmanNodes, Collections.reverseOrder());
 
-//            for(HuffmanNode hn : huffmanNodes){
-//                System.out.println(i + "- Symbols: " + hn.getSymbols() + " - Frequencies: " + hn.getFrequency());
-//            }
-//            System.out.println();
+            for(HuffmanNode hn : huffmanNodes){
+                System.out.println(i + "- Symbols: " + hn.getSymbols() + " - Frequencies: " + hn.getFrequency());
+            }
+            System.out.println();
 
         }
 

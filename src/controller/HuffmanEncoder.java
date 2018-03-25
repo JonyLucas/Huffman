@@ -21,9 +21,9 @@ public class HuffmanEncoder {
     {
         try{
             int currentValue = huffmanReader.nextByte();
-
             while (currentValue != -1)
             {
+                System.out.println("Current character: " + (char) currentValue);
                 buildAndCodify(currentValue);
                 decrement(currentValue);
                 currentValue = huffmanReader.nextByte();
@@ -38,12 +38,15 @@ public class HuffmanEncoder {
         currentTree = TreeBuilder.buildTree(currentFrequency);
         String symbol = String.valueOf((char) currentValue);
         code += currentTree.codifySymbol(symbol, "");
+        System.out.println("code: " + code + "\n");
     }
 
     private void decrement(int value){
         int count = currentFrequency.get(value);
-        currentFrequency.put(value, count-1);
-        System.out.println(currentFrequency);
+        if(count == 1)
+            currentFrequency.remove(value);
+        else
+            currentFrequency.put(value, count-1);
     }
 
     public String getCode(){ return code; }
