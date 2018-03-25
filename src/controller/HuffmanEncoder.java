@@ -37,12 +37,13 @@ public class HuffmanEncoder {
     private void buildAndCodify(int currentValue){
         currentTree = TreeBuilder.buildTree(currentFrequency);
         String symbol = String.valueOf((char) currentValue);
-        currentTree.codifySymbol(symbol, code);
+        code += currentTree.codifySymbol(symbol, "");
     }
 
     private void decrement(int value){
         int count = currentFrequency.get(value);
-        currentFrequency.put(value, count);
+        currentFrequency.put(value, count-1);
+        System.out.println(currentFrequency);
     }
 
     public String getCode(){ return code; }

@@ -37,9 +37,9 @@ public class TreeBuilder {
         int size = huffmanNodes.size();
         HuffmanNode parentNode = null;
 
-        for(int i = size-1; i > 1; i--){
-            HuffmanNode rightSon = huffmanNodes.remove(i);
-            HuffmanNode leftSon = huffmanNodes.remove(i-1);
+        for(int i = size-1; i > 0; i--){
+            HuffmanNode leftSon = huffmanNodes.remove(i);
+            HuffmanNode rightSon = huffmanNodes.remove(i-1);
 
             parentNode = new HuffmanNode(rightSon, leftSon);
             huffmanNodes.add(parentNode);

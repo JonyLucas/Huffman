@@ -12,11 +12,15 @@ public class HuffmanTree {
 
     public String codifySymbol(String symbol, String code){
         if(searchNode.hasSymbol(symbol)){
-            if(searchNode.getLeftSon().hasSymbol(symbol)){
-                searchNode = searchNode.getLeftSon();
+
+            HuffmanNode leftSon = searchNode.getLeftSon();
+            HuffmanNode rightSon = searchNode.getRightSon();
+
+            if(leftSon != null && leftSon.hasSymbol(symbol)){
+                searchNode = leftSon;
                 return codifySymbol(symbol, (code+"1"));
-            }else if(searchNode.getRightSon().hasSymbol(symbol)){
-                searchNode = searchNode.getRightSon();
+            }else if(rightSon != null && rightSon.hasSymbol(symbol)){
+                searchNode = rightSon;
                 return codifySymbol(symbol, (code+"0"));
             }else {
                 return code;
