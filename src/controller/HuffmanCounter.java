@@ -13,14 +13,15 @@ public class HuffmanCounter
         huffmanReader = new HuffmanReader(filePath);
     }
 
-    public void readAllFile()
+    public void readAndCount()
     {
         try{
             int value = huffmanReader.nextByte();
 
             while (value != -1)
             {
-                frequencyCounter(value);
+                int count = (frenquency.get(value) == null) ? 1 : (frenquency.get(value)+1);
+                frenquency.put(value, count);
                 value = huffmanReader.nextByte();
             }
         }catch (Exception exception){
@@ -28,16 +29,7 @@ public class HuffmanCounter
         }
     }
 
-    private void frequencyCounter(int value){
-        int count = frenquency.get(value) == null ? 1 : frenquency.get(value)+1;
-        frenquency.put(value, count);
-    }
+    public void showFrequency(){ System.out.println(frenquency); }
 
-    public void showFrequency(){
-        System.out.println(frenquency);
-    }
-
-    public HashMap<Integer, Integer> getFrenquency() {
-        return frenquency;
-    }
+    public HashMap<Integer, Integer> getFrenquency() { return frenquency; }
 }
