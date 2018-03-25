@@ -24,6 +24,7 @@ public class HuffmanCounter
                 frenquency.put(value, count);
                 value = huffmanReader.nextByte();
             }
+            huffmanReader.close();
         }catch (Exception exception){
             System.out.println(exception.getMessage());
         }

@@ -37,13 +37,18 @@ public class TreeBuilder {
         int size = huffmanNodes.size();
         HuffmanNode parentNode = null;
 
-        for(int i = size; i > 1; i--){
+        for(int i = size-1; i > 1; i--){
             HuffmanNode rightSon = huffmanNodes.remove(i);
             HuffmanNode leftSon = huffmanNodes.remove(i-1);
 
             parentNode = new HuffmanNode(rightSon, leftSon);
             huffmanNodes.add(parentNode);
-            Collections.sort(huffmanNodes);
+            Collections.sort(huffmanNodes, Collections.reverseOrder());
+
+//            for(HuffmanNode hn : huffmanNodes){
+//                System.out.println(i + "- Symbols: " + hn.getSymbols() + " - Frequencies: " + hn.getFrequency());
+//            }
+//            System.out.println();
 
         }
 

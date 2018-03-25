@@ -5,7 +5,7 @@ public class Main
 {
     public static void main (String args[])
     {
-        String path = "C:\\Users\\Joao\\IdeaProjects\\Huffman\\src\\examples\\file.txt";
+        String path = "C:\\Users\\Joao\\IdeaProjects\\huffmanEncoder\\src\\examples\\file.txt";
 
         HuffmanCounter huffmanCounter = new HuffmanCounter(path);
         huffmanCounter.readAndCount();

@@ -31,11 +31,14 @@ public class HuffmanReader
             return current;
 
         } catch (IOException e) {
-            throw new Exception("Falha na leitura de arquivo");
-        }finally {
             fileInputStream.close();
+            throw new Exception("Falha na leitura de arquivo");
         }
 
+    }
+
+    public void close() throws IOException {
+        fileInputStream.close();
     }
 
 

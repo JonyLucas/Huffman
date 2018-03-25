@@ -28,6 +28,7 @@ public class HuffmanEncoder {
                 decrement(currentValue);
                 currentValue = huffmanReader.nextByte();
             }
+            huffmanReader.close();
         }catch (Exception exception){
             System.out.println(exception.getMessage());
         }
