@@ -5,14 +5,15 @@ import java.io.*;
 public class HuffmanReader
 {
     private FileInputStream fileInputStream;
+    private BufferedReader reader;
 
     public HuffmanReader(String filePath)
     {
         File file = new File(filePath);
 
         try {
-            fileInputStream = new FileInputStream(file);
-        } catch (FileNotFoundException e) {
+            reader = new BufferedReader( new InputStreamReader( new FileInputStream( filePath ), "UTF-8" ) );
+        } catch (FileNotFoundException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
     }
@@ -27,18 +28,18 @@ public class HuffmanReader
         int current = -1;
         try {
 
-            current = fileInputStream.read();
+            current = reader.read();
             return current;
 
         } catch (IOException e) {
-            fileInputStream.close();
+            reader.close();
             throw new Exception("Falha na leitura de arquivo");
         }
 
     }
 
     public void close() throws IOException {
-        fileInputStream.close();
+        reader.close();
     }
 
 
