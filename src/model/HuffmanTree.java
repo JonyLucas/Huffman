@@ -15,9 +15,11 @@ public class HuffmanTree {
             if(searchNode.getLeftSon().hasSymbol(symbol)){
                 searchNode = searchNode.getLeftSon();
                 return codifySymbol(symbol, (code+"1"));
-            }else{
+            }else if(searchNode.getRightSon().hasSymbol(symbol)){
                 searchNode = searchNode.getRightSon();
                 return codifySymbol(symbol, (code+"0"));
+            }else {
+                return code;
             }
         }else{
             return null;
