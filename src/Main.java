@@ -2,19 +2,22 @@ import controller.HuffmanEncoder;
 import controller.HuffmanCounter;
 import infra.HuffmanWriter;
 
+import javax.swing.*;
+
 public class Main
 {
     public static void main (String args[])
     {
-        String path = "C:\\Users\\Joao\\IdeaProjects\\huffmanEncoder\\src\\examples\\file.txt";
+        String fileInputPath = JOptionPane.showInputDialog("File Input Path:");
+        String fileOutputPath = "src\\examples\\resultEncoder";
 
-        HuffmanCounter huffmanCounter = new HuffmanCounter(path);
+        HuffmanCounter huffmanCounter = new HuffmanCounter(fileInputPath);
         huffmanCounter.readAndCount();
 
-        HuffmanEncoder huffmanEncoder = new HuffmanEncoder(path, huffmanCounter.getFrenquency());
+        HuffmanEncoder huffmanEncoder = new HuffmanEncoder(fileInputPath, huffmanCounter.getFrenquency());
         huffmanEncoder.readAndDecrement();
 
-        new HuffmanWriter().saveFile("C:\\Users\\Joao\\IdeaProjects\\huffmanEncoder\\src\\examples\\result.txt", huffmanCounter.getFrenquency(), huffmanEncoder.getCode());
+        new HuffmanWriter().saveFile(fileOutputPath, huffmanCounter.getFrenquency(), huffmanEncoder.getCode());
     }
 
 }
