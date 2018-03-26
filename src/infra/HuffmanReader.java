@@ -27,7 +27,6 @@ public class HuffmanReader
     {
         int current = -1;
         try {
-
             current = reader.read();
             return current;
 

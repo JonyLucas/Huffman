@@ -22,17 +22,17 @@ public class TreeBuilder {
 
         for(Integer symbol : symbolFrequency.keySet()){
             int frequency = symbolFrequency.get(symbol);
-            String symbolCharacter = String.valueOf((char) symbol.byteValue());
+            String symbolCharacter = String.valueOf((char) symbol.intValue());
             sheets.add(new HuffmanNode(symbolCharacter, frequency));
         }
 
         Collections.sort(sheets, Collections.reverseOrder());
 
 
-        for(HuffmanNode hn : sheets){
-            System.out.println("Symbol: " + hn.getSymbols() + " - Frequency: " + hn.getFrequency());
-        }
-        System.out.println();
+//        for(HuffmanNode hn : sheets){
+//            System.out.println("Symbol: " + hn.getSymbols() + " - Frequency: " + hn.getFrequency());
+//        }
+//        System.out.println();
 
 
         return sheets;
@@ -52,10 +52,10 @@ public class TreeBuilder {
             Collections.sort(huffmanNodes, Collections.reverseOrder());
 
 
-            for(HuffmanNode hn : huffmanNodes){
-                System.out.println(i + "- Symbols: " + hn.getSymbols() + " - Frequencies: " + hn.getFrequency());
-            }
-            System.out.println();
+//            for(HuffmanNode hn : huffmanNodes){
+//                System.out.println(i + "- Symbols: " + hn.getSymbols() + " - Frequencies: " + hn.getFrequency());
+//            }
+//            System.out.println();
 
 
         }

@@ -8,8 +8,8 @@ public class Main
 {
     public static void main (String args[])
     {
-        String fileInputPath = "src\\examples\\Exemplo_18k.txt";//JOptionPane.showInputDialog("File Input Path:");
-        String fileOutputPath = "src\\examples\\resultEncoder";
+        String fileInputPath = "src\\examples\\Exemplo_18K.txt";//JOptionPane.showInputDialog("File Input Path:");
+        String fileOutputPath = "src\\examples\\resultEncoder.txt";
 
         HuffmanCounter huffmanCounter = new HuffmanCounter(fileInputPath);
         huffmanCounter.readAndCount();
