@@ -11,12 +11,12 @@ import java.util.HashMap;
 
 public class HuffmanWriter {
 
-    BufferedWriter writer;
+    private DataOutputStream writer;
 
     public void saveFile(String filePath, HashMap<Integer,Integer> frequency, String finalCode){
 
         try {
-            writer = Files.newBufferedWriter(Paths.get(filePath), StandardCharsets.UTF_8);
+            writer = new DataOutputStream(new FileOutputStream(filePath));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -25,13 +25,12 @@ public class HuffmanWriter {
 
         for (Integer integer : frequency.keySet()){
             frequencies += integer + " " + frequency.get(integer) + " ";
-            //System.out.println("Char: " + (char) (int) integer + " - F: " + frequency.get(integer));
         }
 
         frequencies += "\n";
 
         try {
-            writer.write(frequencies);
+            writer.writeBytes(frequencies);
             writeCode(around(finalCode));
             writer.close();
         } catch (IOException e) {
@@ -50,7 +49,7 @@ public class HuffmanWriter {
             if(k < 0)
             {
                 k = 7;
-                writer.write(aux);
+                writer.writeByte(aux);
                 aux = 0;
             }
         }
