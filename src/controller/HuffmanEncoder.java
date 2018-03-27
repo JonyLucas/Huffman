@@ -10,20 +10,19 @@ public class HuffmanEncoder {
     private String code = "";
     private HuffmanReader huffmanReader;
     private HuffmanTree currentTree;
-    private HashMap <Integer, Integer> currentFrequency = new HashMap<Integer,Integer>();
+    private HashMap <Integer, Integer> currentFrequency = new HashMap<>();
 
     public HuffmanEncoder(String filePath, HashMap<Integer, Integer> frequency){
         huffmanReader = new HuffmanReader(filePath);
-        currentFrequency = new HashMap<Integer, Integer>(frequency);
+        currentFrequency = new HashMap<>(frequency);
     }
 
     public void readAndDecrement()
     {
         try{
             int currentValue = huffmanReader.nextByte();
-            while (currentValue != -1)
+            while (currentValue != 300)
             {
-//                System.out.println("Current character: " + (char) currentValue);
                 buildAndCodify(currentValue);
                 decrement(currentValue);
                 currentValue = huffmanReader.nextByte();
@@ -36,9 +35,7 @@ public class HuffmanEncoder {
 
     private void buildAndCodify(int currentValue){
         currentTree = TreeBuilder.buildTree(currentFrequency);
-        String symbol = String.valueOf((char) currentValue);
-        code += currentTree.codifySymbol(symbol, "");
-//        System.out.println("code: " + code + "\n");
+        code += currentTree.codifySymbol(currentValue, "");
     }
 
     private void decrement(int value){
