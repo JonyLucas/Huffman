@@ -22,8 +22,7 @@ public class TreeBuilder {
 
         for(Integer symbol : symbolFrequency.keySet()){
             int frequency = symbolFrequency.get(symbol);
-            String symbolCharacter = String.valueOf((char) symbol.intValue());
-            sheets.add(new HuffmanNode(symbolCharacter, frequency));
+            sheets.add(new HuffmanNode(symbol, frequency));
         }
 
         Collections.sort(sheets, Collections.reverseOrder());
