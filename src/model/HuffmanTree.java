@@ -10,7 +10,7 @@ public class HuffmanTree {
         searchNode = root;
     }
 
-    public String codifySymbol(String symbol, String code){
+    public String codifySymbol(int symbol, String code){
         if(searchNode.hasSymbol(symbol)){
 
             HuffmanNode leftSon = searchNode.getLeftSon();
